@@ -1,0 +1,58 @@
+buildscript {
+  repositories {
+    jcenter()
+    mavenLocal()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:1.0.0'
+    classpath 'me.champeau.gradle:gradle-groovy-android-plugin:0.3.4'
+  }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'me.champeau.gradle.groovy-android'
+
+android {
+
+  compileSdkVersion 21
+  buildToolsVersion "21.1.2"
+
+  defaultConfig {
+    minSdkVersion 15
+    targetSdkVersion 21
+    versionCode 1
+    versionName "1.0"
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+
+  lintOptions {
+    abortOnError false
+  }
+
+  buildTypes {
+    debug {
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+    }
+  }
+
+  packagingOptions {
+    exclude 'META-INF/services/org.codehaus.groovy.transform.ASTTransformation'
+    exclude 'LICENSE.txt'
+  }
+}
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  compile 'org.codehaus.groovy:groovy:2.4.0-rc-1:grooid'
+
+  androidTestCompile('com.android.support.test:testing-support-lib:0.1') {
+    exclude group: 'junit'
+  }
+  androidTestCompile 'junit:junit-dep:4.11'
+  androidTestCompile('org.spockframework:spock-core:0.7-groovy-2.0') {
+    exclude group: 'org.codehaus.groovy', module: 'groovy'
+  }
+}
