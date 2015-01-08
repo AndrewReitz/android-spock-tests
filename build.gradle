@@ -15,7 +15,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'me.champeau.gradle.groovy-android'
 
 android {
-
   compileSdkVersion 21
   buildToolsVersion "21.1.2"
 
@@ -55,7 +54,7 @@ dependencies {
   }
   androidTestCompile 'junit:junit-dep:4.11'
   androidTestCompile('org.spockframework:spock-core:0.7-groovy-2.0') {
-    exclude group: 'org.codehaus.groovy', module: 'groovy'
+    exclude group: 'org.codehaus.groovy'
   }
 }
 
