@@ -11,6 +11,11 @@ class SpockTestingSpec extends Specification {
     def b = a * a
 
     then:
-    noExceptionThrown()
+    b == 4
+  }
+
+  def "should fail"() {
+    expect:
+    5 == 4
   }
 }
