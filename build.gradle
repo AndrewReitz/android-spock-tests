@@ -47,7 +47,7 @@ repositories {
 }
 
 dependencies {
-  compile 'org.codehaus.groovy:groovy:2.4.0-rc-1:grooid'
+  compile 'org.codehaus.groovy:groovy:2.4.0-rc-2:grooid'
 
   androidTestCompile('com.android.support.test:testing-support-lib:0.1') {
     exclude group: 'junit'
