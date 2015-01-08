@@ -23,7 +23,7 @@ android {
     targetSdkVersion 21
     versionCode 1
     versionName "1.0"
-    testInstrumentationRunner "spock.android.AndroidSpockTestRunner"
+    testInstrumentationRunner "com.andrewreitz.spock.AndroidSpockTestRunner"
   }
 
   lintOptions {

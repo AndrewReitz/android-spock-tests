@@ -1,4 +1,4 @@
-package spock.android
+package com.andrewreitz.spock
 
 import android.app.Activity
 import android.os.Bundle
